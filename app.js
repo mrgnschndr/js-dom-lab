@@ -65,6 +65,22 @@ removeItemBtn.addEventListener('click', function() {
 
 // Add an input field to allow the user to add a custom item to the list
 
+const breakLine = document.createElement('br');
+buttonSection.appendChild(breakLine);
+
+const customItemField = document.createElement('input');
+customItemField.setAttribute = ('id', 'customInput');
+buttonSection.appendChild(customItemField);
+
+let submitButton = document.createElement('button');
+submitButton.textContent = 'Add Custom Item';
+buttonSection.appendChild(submitButton);
+submitButton.addEventListener('click', function() {
+    let customItem = document.createElement('li');
+    customItem.textContent = customItemField.value;
+    itemList.appendChild(customItem);
+    customItemField.value = '';
+});
 
 
 // Stretch Goal: Create three empty div elements. Create a button that, when clicked, will change the background color of the div to a random hex code
